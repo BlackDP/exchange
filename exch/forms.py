@@ -1,5 +1,5 @@
 from django import forms
+from .validators import validate_file_extension
 
 class UploadFileForm(forms.Form):
-    title = forms.CharField(max_length=50)
-    file = forms.FileField()
+    file = forms.FileField(validators=[validate_file_extension])
